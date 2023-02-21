@@ -5,9 +5,9 @@ type item = {
   num_sold : int;
 }
 
-let item1 = {
+let item1 : item = {
   name = "Water Bottle";
-  price = 9.82;
+  price = 9.82 *. 1.25;
   on_hand = 10;
   num_sold = 0;
 }
@@ -18,6 +18,8 @@ let item2 = {
   num_sold = 27;
   on_hand = 48;
 }
+
+let the_price = item1.price
 
 let rec count_inventory(xs : item list) : int =
   if xs = [] then
@@ -47,6 +49,13 @@ type silly =
 | Foo of string
 | Pizza
 
+(* type other_silly = 
+| Pizza
+| X of int
+
+let silly_test1 = Pizza
+let silly_test : silly = Pizza *)
+let x : int = 42
 let silly1 : silly = Pizza
 let silly2 : silly = Foo "Hello"
 let silly3 : silly = A (42, true, ["Now"; "is"; "the"; "time"])
